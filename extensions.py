@@ -28,6 +28,6 @@ class Converter:
             raise APIException(f'Не удалось обработать количество {amount}')
 
         r = requests.get(f'https://min-api.cryptocompare.com/data/price?fsym={quote_ticket}&tsyms={base_ticker}')
-        result = json.loads(r.content)[keys[base]] * int(amount)
+        result = json.loads(r.content)[keys[base]] * amount
 
         return result
